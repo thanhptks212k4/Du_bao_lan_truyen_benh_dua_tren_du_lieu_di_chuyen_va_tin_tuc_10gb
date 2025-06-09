@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự báo dịch bệnh</title>
+    <style>
+        .center {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Dự báo xu hướng lan truyền dịch bệnh</h2>
+    <form action="/predict" method="post" aria-label="Form dự báo dịch bệnh" style="text-align: center;">
+        <label for="disease">Chọn bệnh:</label>
+        <select id="disease" name="disease" aria-label="Chọn bệnh" required>
+            <option value="cholera">cholera</option>
+            <option value="ebola">ebola</option>
+            <option value="H1N1">H1N1</option>
+        </select>
+        <br><br>
+
+        <label for="year">Chọn năm:</label>
+        <select id="year" name="year" aria-label="Chọn năm" required>
+            {% for y in range(2015, 2026) %}
+                <option value="{{ y }}">{{ y }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <label for="month">Chọn tháng:</label>
+        <select id="month" name="month" aria-label="Chọn tháng" required>
+            {% for m in range(1, 13) %}
+                <option value="{{ m }}">{{ m }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+
+        <button type="submit">Dự đoán</button>
+    </form>
+
+    <div class="center">
+        {% if result %}
+            <h3>Kết quả dự báo:</h3>
+            <p><strong>{{ result }}</strong></p>
+        {% endif %}
+
+        {% if plot_url %}
+            <h3>Biểu đồ dự đoán trong tháng:</h3>
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Biểu đồ dự đoán dịch bệnh" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 5px;">
+        {% endif %}
+    </div>
+</body>
+</html>
