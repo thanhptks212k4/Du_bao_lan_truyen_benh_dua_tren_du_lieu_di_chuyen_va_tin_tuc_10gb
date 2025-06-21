@@ -60,6 +60,7 @@ Chức năng:
 ---
 
 ## 📁 Cấu trúc thư mục
+
 ├── data/ # Dữ liệu đầu vào và sau xử lý
 ├── models/ # Định nghĩa mô hình (TCN, PatchTST, Informer)
 ├── notebook/ # Notebook huấn luyện & đánh giá mô hình
