@@ -8,7 +8,7 @@ Bài toán được xây dựng dưới dạng **phân loại chuỗi thời gia
 ---
 
 ## 📚 Dữ liệu sử dụng
-- 📥 **Nguồn dữ liệu**: [Time Series H1N1 Tweets (Kaggle)](https://www.kaggle.com/datasets/maihongtng/time-series)
+- 📥 **Nguồn dữ liệu**: [Time Series(Kaggle)](https://www.kaggle.com/datasets/maihongtng/time-series)
 - 💾 Bao gồm các đặc trưng như: `date`, `count`, `ratio`, `label`, `count_scaled`, cùng với thông tin từ bài đăng mạng xã hội Twitter.
 - 🔄 Được xử lý thống nhất qua:
   - Xử lý datetime, chuẩn hóa (`StandardScaler`, `MinMaxScaler`)
